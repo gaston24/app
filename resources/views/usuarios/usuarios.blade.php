@@ -4,8 +4,15 @@
 
 @section('content')
 
-<div class="table table-sm table-responsive">
-    <table class=" mt-5">
+<div class="row mt-2 mb-1">
+    <div class="col-3"></div>
+    <div class="col-6"><input type="text" class="form-control form-control-sm" id="textBox" onkeyup="filtrar()" placeholder="Filtrar" autofocus ></div>
+    <div class="col-3"></div>
+</div>
+
+
+<div class="table table-sm table-hover">
+    <table class=" mt-3">
         <thead>
             <th>Nombre</th>
             <th>Pass</th>
@@ -18,7 +25,7 @@
             <th>Accion</th>
 
         </thead>
-        <tbody>
+        <tbody id="table">
             @foreach ($todosLosUsuarios as $usuario)
                 <tr>
                     <td><small>{{$usuario->NOMBRE}}</small></td>

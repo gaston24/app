@@ -1,20 +1,25 @@
-$(document).ready(
-    function(){
-        $('#tablaVentas').DataTable({
-            select: true,
-            dom: 'lBfrtip', buttons: ['copy', 'excel', 'pdf', 'print'],
-            "pageLength": 100,
-            fixedHeader: true
-        });
-    }
-);
+function filtrar() {
+	var input, filter, table, tr, td, td2, i, txtValue;
+	input = document.getElementById('textBox');
+	filter = input.value.toUpperCase();
+	table = document.getElementById("table");
+	tr = table.getElementsByTagName('tr');
+	
 
+	for (i = 0; i < tr.length; i++) {
+		visible = false;
+		/* Obtenemos todas las celdas de la fila, no sólo la primera */
+		td = tr[i].getElementsByTagName("td");
 
-$(document).ready(
-    function () {
-        $('#headSuc').html( $('#headSuc').html()+ ': '+ $('#sucursales').html());
-        $('#headCantComp').html( $('#headCantComp').html()+ ': '+ $('#cantComp').html());
-        $('#headImporte').html( $('#headImporte').html()+ ': '+ $('#importe').html());
-    }
-);
-
+		for (j = 0; j < td.length; j++) {
+			if (td[j] && td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+				visible = true;
+			}
+		}
+		if (visible === true) {
+			tr[i].style.display = "";
+		} else {
+			tr[i].style.display = "none";
+		}
+	}
+}
