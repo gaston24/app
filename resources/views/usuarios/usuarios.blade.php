@@ -12,7 +12,7 @@
 
 
 <div class="table table-sm table-hover">
-    <table class=" mt-3">
+    <table class="mt-3">
         <thead>
             <th>Nombre</th>
             <th>Pass</th>
@@ -37,11 +37,8 @@
                     <td><small>{{$usuario->COD_VENDED}}</small></td>
                     <td><small>{{$usuario->TANGO}}</small></td>
                     <td>
-                        <form action="" class="d-inline" method="POST">
-                            @method('PUT')
-                            @csrf
-                            <button type="submit" class="btn btn-warning btn-sm">Grabar</button>
-                        </form>
+
+                            <button type="button" class="btn btn-warning btn-sm" onClick="editar({{$usuario->ID}})">Editar</button>
 
                         <form action="" class="d-inline" method="POST">
                             @method('DELETE')

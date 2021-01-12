@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ url('/') }}/public/img/icono.ico">
 
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/public/css/bootstrap.min.css" >
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
    
     	
 </head>
@@ -22,8 +23,12 @@
     </div>
 
     <script type="text/javascript" src="{{ url('/') }}/public/js/jquery-3.4.1.min.js" ></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/bootstrap.min.js"></script>
+    
     <script type="text/javascript" src="{{ url('/') }}/public/js/main.js"></script>
+
+
 
 
 </body>

@@ -15,4 +15,16 @@ class UsuariosController extends Controller
 
         return view('usuarios.usuarios', compact('todosLosUsuarios'));
     }
+
+    public function buscarUno($id){
+        $usuario = Usuario::findOrFail($id);
+
+        return $usuario;
+    }
+
+    public function actualizar(Request $request, $id){
+        dump($request);
+    }
+
+
 }
