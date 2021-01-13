@@ -26,6 +26,7 @@
 
         </thead>
         <tbody id="table">
+            @csrf
             @foreach ($todosLosUsuarios as $usuario)
                 <tr>
                     <td><small>{{$usuario->NOMBRE}}</small></td>

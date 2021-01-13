@@ -28,7 +28,7 @@ function filtrar() {
 
 
 
-function editar(id){
+function editar(id, csrf){
 
 	$.ajax({
 		url: 'usuarios/'+id,
@@ -50,7 +50,7 @@ function editar(id){
 
 
 
-function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucurs, codVended, tango, codDeposi, tipo)
+function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucurs, codVended, tango, codDeposi, tipo, csrf)
 {
 	const { value: formValues } = Swal.fire({
 		title: 'Detalle del usuario',
@@ -105,7 +105,7 @@ function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucu
 
 		// console.log("todavia estoy acaaa:", id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua);
 
-		actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua);
+		actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua, csrf);
 
 
 
@@ -120,15 +120,16 @@ function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucu
 }
 
 
-function actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua){
-	console.log("ya paseeeee:", id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua);
-
+function actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua, csrf){
+	// console.log("ya paseeeee:", id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua);
+	console.log(csrf);
 
 		$.ajax({
 		url: 'usuariosActua/'+id_actua,
-		method: 'GET',
+		method: 'POST',
 		dataType: "JSON",
 		data: {
+			_token: csrf,
 			id: id_actua, 
 			nombre: nombre_actua, 
 			pass: pass_actua, 
