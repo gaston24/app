@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 use App\Models\Usuario;
@@ -11,7 +14,11 @@ class UsuariosController extends Controller
     //
 
     public function todos(){
-        $todosLosUsuarios = Usuario::all();
+        $todosLosUsuarios = Usuario::orderBy('TIPO')
+                                    ->orderBy('NRO_SUCURS') 
+                                    ->orderBy('COD_CLIENT')
+                                    ->orderBy('NOMBRE')
+                                    ->get();
 
         return view('usuarios.usuarios', compact('todosLosUsuarios'));
     }
@@ -22,27 +29,38 @@ class UsuariosController extends Controller
         return $usuario;
     }
 
-    public function actualizar(Request $request, $id){
+    public function actualizar(Request $request){
         $request->validate([
             'nombre' => 'required',
             'pass' => 'required',
             'id' => 'required',
         ]);
 
-        $usuarioActualizado = Usuario::findOrFail($id);
-        $usuarioActualizado->nombre = $request->nombre;
-        $usuarioActualizado->pass = $request->pass;
-        $usuarioActualizado->dsn = $request->dsn;
-        $usuarioActualizado->descripcion = $request->descripcion;
-        $usuarioActualizado->codClient = $request->codClient;
-        $usuarioActualizado->nroSucurs = $request->nroSucurs;
-        $usuarioActualizado->codVended = $request->codVended;
-        $usuarioActualizado->tango = $request->tango;
-        $usuarioActualizado->tipo = $request->tipo;
+        try {
 
-        $usuarioActualizado->save();
+            DB::table('SOF_USUARIOS')
+            ->where('ID', $request->id)
+            ->update(
+                [
+                    'NOMBRE'        => $request->nombre,
+                    'PASS'          => $request->pass,
+                    'DSN'           => $request->dsn,
+                    'DESCRIPCION'   => $request->descripcion,
+                    'COD_CLIENT'    => $request->codClient,
+                    'NRO_SUCURS'    => $request->nroSucurs,
+                    'COD_VENDED'    => $request->codVended,
+                    'TANGO'         => $request->tango,
+                    'TIPO'          => $request->tipo
+                ]
+            );
 
-        return 'Usuario actualizado';
+            return ['success' => true, 'message' => 'USUARIO ACTUALIZADO!'];
+
+          } catch (ModelNotFoundException $ex) {
+
+            return ['success' => true, 'message' => $ex];
+
+          }
     }
 
 

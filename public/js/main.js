@@ -25,10 +25,7 @@ function filtrar() {
 }
 
 
-
-
-
-function editar(id, csrf){
+function editar(id){
 
 	$.ajax({
 		url: 'usuarios/'+id,
@@ -44,13 +41,10 @@ function editar(id, csrf){
 
 		}
 	});
-			
-	
+
 }
 
-
-
-function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucurs, codVended, tango, codDeposi, tipo, csrf)
+function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucurs, codVended, tango, codDeposi, tipo)
 {
 	const { value: formValues } = Swal.fire({
 		title: 'Detalle del usuario',
@@ -77,20 +71,6 @@ function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucu
 		</select></div>`,
 		focusConfirm: false,
 		preConfirm: () => {
-		
-		
-		// console.log(
-		// 	"estoy en el js todavia:", 
-		// 	document.getElementById('swal-input1').value,
-		// 	document.getElementById('swal-input2').value,
-		// 	document.getElementById('swal-input3').value,
-		// 	document.getElementById('swal-input4').value,
-		// 	document.getElementById('swal-input5').value,
-		// 	document.getElementById('swal-input6').value,
-		// 	document.getElementById('swal-input7').value,
-		// 	document.getElementById('swal-input8').value,
-		// 	document.getElementById('swal-input9').value
-		// )
 
 		var id_actua =			id;
 		var nombre_actua =		document.getElementById('swal-input1').value;
@@ -103,12 +83,7 @@ function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucu
 		var tango_actua =		document.getElementById('swal-input8').value;
 		var tipo_actua =		document.getElementById('swal-input9').value;
 
-		// console.log("todavia estoy acaaa:", id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua);
-
-		actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua, csrf);
-
-
-
+		actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua);
 		
 		}
 	})
@@ -119,10 +94,11 @@ function alerta(id, nombre, pass, permisos, dsn, descripcion, codClient, nroSucu
 
 }
 
+function actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua){
 
-function actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua, csrf){
-	// console.log("ya paseeeee:", id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_actua, codClient_actua, nroSucurs_actua, codVended_actua, tango_actua, tipo_actua);
-	console.log(csrf);
+	var data = document.getElementsByTagName("meta");
+
+	csrf = data['csrf-token'].content;
 
 		$.ajax({
 		url: 'usuariosActua/'+id_actua,
@@ -141,8 +117,9 @@ function actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_a
 			tango: tango_actua, 
 			tipo: tipo_actua
 		},
-		success: function(data) {
-			console.log(data)
+		success: function(message) {
+			location.reload();
 		}
 	});
 }
+

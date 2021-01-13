@@ -23,4 +23,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/usuarios', 'UsuariosController@todos')->name('usuarios');
 Route::get('/usuarios/{id}',        'UsuariosController@buscarUno');
-Route::get('/usuariosActua/{id}',   'UsuariosController@actualizar');
+Route::post('/usuariosActua/{id}',   'UsuariosController@actualizar');
