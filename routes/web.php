@@ -21,6 +21,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
 Route::get('/usuarios', 'UsuariosController@todos')->name('usuarios');
 Route::get('/usuarios/{id}',        'UsuariosController@buscarUno');
 Route::post('/usuariosActua/{id}',   'UsuariosController@actualizar');
+Route::post('/usuariosAgrega',   'UsuariosController@agregarUno');
+
+

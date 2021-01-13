@@ -6,8 +6,18 @@
 
 <div class="row mt-2 mb-1">
     <div class="col-3"></div>
-    <div class="col-6"><input type="text" class="form-control form-control-sm" id="textBox" onkeyup="filtrar()" placeholder="Filtrar" autofocus ></div>
-    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col-9">
+                <input type="text" class="form-control form-control-sm" id="textBox" onkeyup="filtrar()" placeholder="Filtrar" autofocus >
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-info btn-sm" onclick="agregarUno()">Agregar</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+    </div>
 </div>
 
 

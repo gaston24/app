@@ -30,6 +30,7 @@ class UsuariosController extends Controller
     }
 
     public function actualizar(Request $request){
+
         $request->validate([
             'nombre' => 'required',
             'pass' => 'required',
@@ -55,6 +56,42 @@ class UsuariosController extends Controller
             );
 
             return ['success' => true, 'message' => 'USUARIO ACTUALIZADO!'];
+
+          } catch (ModelNotFoundException $ex) {
+
+            return ['success' => true, 'message' => $ex];
+
+          }
+    }
+
+
+
+
+    public function agregarUno(Request $request){
+
+        // $request->validate([
+        //     'nombre' => 'required',
+        //     'pass' => 'required',
+        // ]);
+
+        try {
+
+
+            // DB::table('SOF_USUARIOS')->insert(
+            //     [
+            //         'NOMBRE'        => $request->nombre,
+            //         'PASS'          => $request->pass,
+            //         'DSN'           => $request->dsn,
+            //         'DESCRIPCION'   => $request->descripcion,
+            //         'COD_CLIENT'    => $request->codClient,
+            //         'NRO_SUCURS'    => $request->nroSucurs,
+            //         'COD_VENDED'    => $request->codVended,
+            //         'TANGO'         => $request->tango,
+            //         'TIPO'          => $request->tipo
+            //     ]
+            // );
+
+            return ['success' => true, 'message' => $request->nombre];
 
           } catch (ModelNotFoundException $ex) {
 
