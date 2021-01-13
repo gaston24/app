@@ -51,11 +51,8 @@
 
                             <button type="button" class="btn btn-warning btn-sm" onClick="editar({{$usuario->ID}})">Editar</button>
 
-                        <form action="" class="d-inline" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
+                            <button type="button" class="btn btn-danger btn-sm" onClick="eliminar({{$usuario->ID}})">Eliminar</button>
+
                     </td>
                 </tr>
             @endforeach

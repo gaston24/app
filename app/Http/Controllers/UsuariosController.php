@@ -69,29 +69,29 @@ class UsuariosController extends Controller
 
     public function agregarUno(Request $request){
 
-        // $request->validate([
-        //     'nombre' => 'required',
-        //     'pass' => 'required',
-        // ]);
+        $request->validate([
+            'nombre' => 'required',
+            'pass' => 'required',
+        ]);
 
         try {
 
 
-            // DB::table('SOF_USUARIOS')->insert(
-            //     [
-            //         'NOMBRE'        => $request->nombre,
-            //         'PASS'          => $request->pass,
-            //         'DSN'           => $request->dsn,
-            //         'DESCRIPCION'   => $request->descripcion,
-            //         'COD_CLIENT'    => $request->codClient,
-            //         'NRO_SUCURS'    => $request->nroSucurs,
-            //         'COD_VENDED'    => $request->codVended,
-            //         'TANGO'         => $request->tango,
-            //         'TIPO'          => $request->tipo
-            //     ]
-            // );
+            DB::table('SOF_USUARIOS')->insert(
+                [
+                    'NOMBRE'        => $request->nombre,
+                    'PASS'          => $request->pass,
+                    'DSN'           => $request->dsn,
+                    'DESCRIPCION'   => $request->descripcion,
+                    'COD_CLIENT'    => $request->codClient,
+                    'NRO_SUCURS'    => $request->nroSucurs,
+                    'COD_VENDED'    => $request->codVended,
+                    'TANGO'         => $request->tango,
+                    'TIPO'          => $request->tipo
+                ]
+            );
 
-            return ['success' => true, 'message' => $request->nombre];
+            return ['success' => true, 'message' => $request];
 
           } catch (ModelNotFoundException $ex) {
 
@@ -100,5 +100,22 @@ class UsuariosController extends Controller
           }
     }
 
+    public function eliminarUno(Request $request){
+
+    try {
+        
+        DB::table('SOF_USUARIOS')->where('ID','=', $request->id)->delete();
+
+        return ['success' => true, 'message' => 'USUARIO ELIMINADO'];
+
+    } catch (ModelNotFoundException $ex) {
+
+    return ['success' => true, 'message' => $ex];
+
+    }
+
+        
+
+    }
 
 }

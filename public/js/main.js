@@ -101,7 +101,7 @@ function actualizar(id_actua, nombre_actua, pass_actua, dsn_actua, descripcion_a
 	csrf = data['csrf-token'].content;
 
 		$.ajax({
-		url: 'usuariosActua/'+id_actua,
+		url: 'usuarios/usuariosActua/'+id_actua,
 		method: 'POST',
 		dataType: "JSON",
 		data: {
@@ -131,7 +131,7 @@ function agregarUno(){
 		html:
 		'<div class="row"> <div class="col-6 text-left">Nombre		</div>	<input id="swal-input1" class="form-control form-control-sm mt-1 col-6" 				> </div>' +
 		'<div class="row"> <div class="col-6 text-left">Pass			</div>	<input id="swal-input2" class="form-control form-control-sm mt-1 col-6" 			> </div>' +
-		'<div class="row"> <div class="col-6 text-left">DSN			</div>	<input id="swal-input3" class="form-control form-control-sm mt-1 col-6" 				> </div>' +
+		'<div class="row"> <div class="col-6 text-left">DSN			</div>	<input id="swal-input3" class="form-control form-control-sm mt-1 col-6" value="SIN"		> </div>' +
 		'<div class="row"> <div class="col-6 text-left">Descripcion	</div>	<input id="swal-input4" class="form-control form-control-sm mt-1 col-6" 				> </div>' +
 		'<div class="row"> <div class="col-6 text-left">Cod Cliente	</div>	<input id="swal-input5" class="form-control form-control-sm mt-1 col-6" 				> </div>' +
 		'<div class="row"> <div class="col-6 text-left">Nro Sucursal	</div>	<input id="swal-input6" class="form-control form-control-sm mt-1 col-6" value="0"	> </div>' +
@@ -177,16 +177,12 @@ function agregarUno(){
 
 function agregar(nombre, pass, dsn, descripcion, codClient, nroSucurs, codVended, tango, tipo){
 
-	// console.log("estoy aca");
-
 	var data = document.getElementsByTagName("meta");
 
 	csrf = data['csrf-token'].content;
 
-	// console.log(csrf, nombre, pass, dsn, descripcion, codClient, nroSucurs, codVended, tango, tipo);
-
 		$.ajax({
-		url: 'usuariosAgrega/',
+		url: 'usuarios/usuariosAgrega',
 		method: 'POST',
 		dataType: "JSON",
 		data: {
@@ -202,8 +198,53 @@ function agregar(nombre, pass, dsn, descripcion, codClient, nroSucurs, codVended
 			tipo: tipo
 		},
 		success: function(message) {
-			console.log(message);
-			// location.reload();
+			location.reload();
+			// console.log(message);
 		}
 	});
+}
+
+function eliminar(id){
+	Swal.fire({
+		title: 'Estas seguro que queres eliminar el usuario?',
+		text: "No hay vuelta atras!",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Si, borrar'
+	  }).then((result) => {
+		if (result.isConfirmed) {
+			confirmarEliminar(id);
+		  Swal.fire(
+			'Borrado!',
+			'El usuario fue eliminado',
+			'success'
+		  )
+		}
+	  })
+}
+
+function confirmarEliminar(id){
+	console.log(id);
+
+	var data = document.getElementsByTagName("meta");
+
+	csrf = data['csrf-token'].content;
+
+		$.ajax({
+		url: 'usuarios/usuariosEliminar/'+id,
+		method: 'DELETE',
+		dataType: "JSON",
+		data: {
+			_token: csrf,
+			id: id
+		},
+		success: function(message) {
+			console.log(message);
+			location.reload();
+		}
+	});
+
+
 }

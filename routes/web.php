@@ -24,8 +24,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/usuarios', 'UsuariosController@todos')->name('usuarios');
-Route::get('/usuarios/{id}',        'UsuariosController@buscarUno');
-Route::post('/usuariosActua/{id}',   'UsuariosController@actualizar');
-Route::post('/usuariosAgrega',   'UsuariosController@agregarUno');
+Route::get('/usuarios/{id}', 'UsuariosController@buscarUno');
+Route::post('/usuarios/usuariosActua/{id}', 'UsuariosController@actualizar');
+Route::post('usuarios/usuariosAgrega', 'UsuariosController@agregarUno');
+Route::delete('/usuarios/usuariosEliminar/{id}', 'UsuariosController@eliminarUno');
+
 
 
