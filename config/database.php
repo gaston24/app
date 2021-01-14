@@ -91,6 +91,18 @@ return [
             'prefix_indexes' => true,
         ],
 
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', 27017),
+            'database' => env('LAKER_SA'),
+            'username' => env('root'),
+            'password' => env('root'),
+            'options' => [
+                'database' => 'styde' // sets the authentication database required by mongo 3
+            ]
+        ],
+
     ],
 
     /*

@@ -102,17 +102,17 @@ class UsuariosController extends Controller
 
     public function eliminarUno(Request $request){
 
-    try {
-        
-        DB::table('SOF_USUARIOS')->where('ID','=', $request->id)->delete();
+        try {
+            
+            DB::table('SOF_USUARIOS')->where('ID','=', $request->id)->delete();
 
-        return ['success' => true, 'message' => 'USUARIO ELIMINADO'];
+            return ['success' => true, 'message' => 'USUARIO ELIMINADO'];
 
-    } catch (ModelNotFoundException $ex) {
+        } catch (ModelNotFoundException $ex) {
 
-    return ['success' => true, 'message' => $ex];
+        return ['success' => true, 'message' => $ex];
 
-    }
+        }
 
         
 
