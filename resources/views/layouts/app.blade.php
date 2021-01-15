@@ -13,7 +13,7 @@
     <link href="{{ url('/') }}/public/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Scripts -->
-    <script src="{{ url('/') }}/public/js/jquery-3.4.1.min.js" defer></script>
+    <script src="{{ url('/') }}/public/js/plugins/jquery-3.4.1.min.js" defer></script>
 
 </head>
 <body>

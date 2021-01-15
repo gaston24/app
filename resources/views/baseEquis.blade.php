@@ -26,24 +26,21 @@
     </div>
 
 
-    <script type="text/javascript" src="{{ url('/') }}/public/js/jquery-3.4.1.min.js" ></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/bootstrap.bundle.min.js" ></script>
-    
-    <script type="text/javascript" src="{{ url('/') }}/public/js/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/buttons.flash.min.js"></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/jszip.min.js"></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/pdfmake.min.js"></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/vfs_fonts.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/jquery-3.4.1.min.js" ></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/bootstrap.bundle.min.js" ></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/jszip.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/pdfmake.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/vfs_fonts.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/buttons.print.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/dataTables.fixedHeader.min.js"></script>
 
-    <script type="text/javascript" src="{{ url('/') }}/public/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/buttons.print.min.js"></script>
-    <script type="text/javascript" src="{{ url('/') }}/public/js/dataTables.select.min.js"></script>
-    
-    <script type="text/javascript" src="{{ url('/') }}/public/js/dataTables.fixedHeader.min.js"></script>
-    
-	<script type="text/javascript" src="{{ url('/') }}/public/js/equis.js"></script>
+	<script type="text/javascript" src="{{ url('/') }}/public/js/main/equis.js"></script>
 
 </body>
 </html>

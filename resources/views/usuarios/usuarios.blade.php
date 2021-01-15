@@ -1,4 +1,4 @@
-@extends('baseNormal')
+@extends('baseUsuarios')
 
 @section('pageTitle', 'Usuarios')
 

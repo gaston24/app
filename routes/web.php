@@ -2,10 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () { return redirect('/usuarios'); });
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+/*VENTAS*/
+
+Route::get('/ventas',      'VentasController@localesPropios')->name('ventas');
+Route::get('/ventas/locales',      'VentasController@localesPropios')->name('locales');
+Route::get('/ventas/localesComp',      'VentasController@localesPropiosComp')->name('localesComp');
+Route::get('/ventas/franquicias',  'VentasController@localesFranquicias')->name('franquicias');
+Route::get('/ventas/franquiciasComp',  'VentasController@franquiciasComp')->name('franquiciasComp');
+Route::get('/ventas/todos',  'VentasController@todos')->name('todos');
 
 
 /*USUARIOS*/

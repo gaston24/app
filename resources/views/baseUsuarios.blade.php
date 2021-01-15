@@ -27,7 +27,7 @@
     <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/jquery.min.js"></script>
     <script type="text/javascript" src="{{ url('/') }}/public/js/plugins/bootstrap.min.js"></script>
     
-    <script type="text/javascript" src="{{ url('/') }}/public/js/main/ventas.js"></script>
+    <script type="text/javascript" src="{{ url('/') }}/public/js/main/usuarios.js"></script>
 
 
 

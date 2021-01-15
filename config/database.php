@@ -91,6 +91,32 @@ return [
             'prefix_indexes' => true,
         ],
 
+        'sqlsrv2' => [
+            'driver' => 'sqlsrv',
+            'url' => env('DATABASE_URL'),
+            'host' => 'lakerbis',
+            'port' => env('DB_PORT', '1433'),
+            'database' => 'LOCALES_LAKERS',
+            'username' => 'sa',
+            'password' => 'Axoft',
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+        
+        // 'sqlsrv' => [
+        //     'driver' => 'sqlsrv',
+        //     'url' => env('DATABASE_URL'),
+        //     'host' => env('DB_HOST', 'localhost'),
+        //     'port' => env('DB_PORT', '1433'),
+        //     'database' => env('DB_DATABASE', 'forge'),
+        //     'username' => env('DB_USERNAME', 'forge'),
+        //     'password' => env('DB_PASSWORD', ''),
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        // ],
+
         'mongodb' => [
             'driver' => 'mongodb',
             'host' => env('DB_HOST', 'localhost'),
