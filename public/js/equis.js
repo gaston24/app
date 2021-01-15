@@ -43,3 +43,17 @@ function cambiar(nComp){
 		}
 	});
 }
+
+
+$(document).ready( function () {
+    var table = $('#dataTabla').DataTable({
+      dom: "B",
+      buttons: [
+        { extend: 'excel', className: 'btn btn-info btn-sm' }
+        ],
+      initComplete: function() {
+        $('table.dataTable').hide();
+      }
+      } );
+  } );
+

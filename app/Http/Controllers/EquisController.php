@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
+use Excel;
+
 class EquisController extends Controller
 {
 
@@ -13,7 +15,7 @@ class EquisController extends Controller
 
         
         if( $request->desde != ''){
-            
+
             $procedure = DB::update("EXEC SJ_EQUIS_SP");
 
             $todos = DB::select("SET DATEFORMAT YMD SELECT * FROM SJ_EQUIS_TABLE WHERE (FECHA_MOV BETWEEN ? AND ?) ORDER BY FECHA_MOV, COD_PRO_CL, N_COMP", [$request->desde, $request->hasta]);
@@ -43,6 +45,5 @@ class EquisController extends Controller
           }
     }
     
-
 
 }

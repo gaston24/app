@@ -30,7 +30,8 @@ Route::post('usuarios/usuariosAgrega', 'UsuariosController@agregarUno');
 Route::delete('/usuarios/usuariosEliminar/{id}', 'UsuariosController@eliminarUno');
 
 
-/*599*/ 
+/*EQUIS*/ 
 Route::get('/equis', 'EquisController@traerTodos')->name('equis')->middleware('auth');
 Route::get('/equis/actualizar/', 'EquisController@actualizar')->middleware('auth');
 
+Route::get('equis/excelExport', 'EquisController@exportExcel')->name('equis.exportar');

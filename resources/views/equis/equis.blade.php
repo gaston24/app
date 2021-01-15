@@ -73,9 +73,12 @@
             <input type="text" class="form-control form-control-sm" id="textBox" onkeyup="filtrar()" placeholder="Filtrar" autofocus >
         </div>
         <div class="col-3">
+            @include('equis.tablaDataTables')
         </div>                        
 
     </div>
+
+    
 
 
 
