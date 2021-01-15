@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/auth/login');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 /*USUARIOS*/
@@ -31,6 +31,6 @@ Route::delete('/usuarios/usuariosEliminar/{id}', 'UsuariosController@eliminarUno
 
 
 /*599*/ 
-Route::get('/equis', 'EquisController@traerTodos')->name('equis');
-Route::get('/equis/actualizar/', 'EquisController@actualizar');
+Route::get('/equis', 'EquisController@traerTodos')->name('equis')->middleware('auth');
+Route::get('/equis/actualizar/', 'EquisController@actualizar')->middleware('auth');
 

@@ -65,7 +65,7 @@
     <div class="col-lg-12">
     <div class="table-responsive">
 
-    <div class="row mt-1">
+    <div class="row mt-1 mb-2">
 
         <div class="col-3">
         </div>
@@ -73,7 +73,6 @@
             <input type="text" class="form-control form-control-sm" id="textBox" onkeyup="filtrar()" placeholder="Filtrar" autofocus >
         </div>
         <div class="col-3">
-            <button type="submit" class="btn btn-info btn-sm mb-2">Actualizar</button>
         </div>                        
 
     </div>
