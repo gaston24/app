@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Equis @yield('pageTitle')</title>
     <link rel="icon" href="{{ url('/') }}/public/img/icono.ico">
-
+    
+    
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/public/css/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/public/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url('/') }}/public/css/select.dataTables.min.css">
@@ -23,6 +24,7 @@
         @yield('content')
         
     </div>
+
 
     <script type="text/javascript" src="{{ url('/') }}/public/js/jquery-3.4.1.min.js" ></script>
     <script type="text/javascript" src="{{ url('/') }}/public/js/bootstrap.bundle.min.js" ></script>
@@ -41,7 +43,7 @@
     
     <script type="text/javascript" src="{{ url('/') }}/public/js/dataTables.fixedHeader.min.js"></script>
     
-	<script type="text/javascript" src="{{ url('/') }}/public/js/main.js"></script>
+	<script type="text/javascript" src="{{ url('/') }}/public/js/equis.js"></script>
 
 </body>
 </html>

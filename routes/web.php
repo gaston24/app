@@ -32,3 +32,5 @@ Route::delete('/usuarios/usuariosEliminar/{id}', 'UsuariosController@eliminarUno
 
 /*599*/ 
 Route::get('/equis', 'EquisController@traerTodos')->name('equis');
+Route::get('/equis/actualizar/', 'EquisController@actualizar');
+
