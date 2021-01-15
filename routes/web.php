@@ -2,24 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('/auth/login');
-});
-
+Route::get('/', function () { return redirect('/usuarios'); });
 Auth::routes();
-
-Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 /*USUARIOS*/
@@ -34,4 +20,3 @@ Route::delete('/usuarios/usuariosEliminar/{id}', 'UsuariosController@eliminarUno
 Route::get('/equis', 'EquisController@traerTodos')->name('equis')->middleware('auth');
 Route::get('/equis/actualizar/', 'EquisController@actualizar')->middleware('auth');
 
-Route::get('equis/excelExport', 'EquisController@exportExcel')->name('equis.exportar');
