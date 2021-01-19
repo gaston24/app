@@ -28,3 +28,9 @@ Route::delete('/usuarios/usuariosEliminar/{id}', 'UsuariosController@eliminarUno
 Route::get('/equis', 'EquisController@traerTodos')->name('equis')->middleware('auth');
 Route::get('/equis/actualizar/', 'EquisController@actualizar')->middleware('auth');
 
+
+
+/*ENVIO DE CLIENTES */
+Route::get('/envioClientes', function(){
+    return view('envioClientes/accion');
+});
