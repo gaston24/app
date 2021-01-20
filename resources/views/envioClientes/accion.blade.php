@@ -13,9 +13,8 @@
     
         <nav >
         
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href=''">Crear Cliente</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="location.href=''">Enviar Cliente</button>
-        
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='envioClientes/crearElige'">Crear Cliente</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="location.href='envioClientes/enviarElige'">Enviar Cliente</button>
         
         </nav>
 

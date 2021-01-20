@@ -31,6 +31,7 @@ Route::get('/equis/actualizar/', 'EquisController@actualizar')->middleware('auth
 
 
 /*ENVIO DE CLIENTES */
-Route::get('/envioClientes', function(){
-    return view('envioClientes/accion');
-});
+Route::get('/envioClientes', function(){ return view('envioClientes/accion'); });
+Route::get('/envioClientes/crearElige', function(){ return view('envioClientes/crearElige'); });
+Route::get('/envioClientes/enviarElige', function(){ return view('envioClientes/enviarElige'); });
+
