@@ -9,7 +9,7 @@
     <div class="col-8">
 
 
-        <h2 align="center">Que desea hacer?</h2></br>
+        <h2 class="text-center mb-5">Que desea hacer?</h2>
     
         <nav >
         
