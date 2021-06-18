@@ -28,8 +28,8 @@
             <td>{{Carbon\Carbon::parse($todo->FECHA_MOV)->format('Y-m-d')}}</td>
             <td>{{$todo->RAZON_SOCI}}</td>
             <td>{{$todo->N_COMP}}</td>
-            <td>{{number_format($todo->CANT_ART , 0, '', '.')}}</td>
-            <td>{{number_format($todo->IMPORTE_TO , 0, '', '.')}}</td>
+            <td>{{number_format($todo->CANT_ART , 0, '.', ',')}}</td>
+                    <td>{{number_format($todo->IMPORTE_TO , 0, '.', ',')}}</td>
             <td>{{$todo->GC_GDT_NUM_GUIA}}</td>
             <td>
                 <input type="checkbox" onclick="cambiar('{{$todo->N_COMP}}')" <?php if($todo->CHEQUEADO==1){echo 'checked';} ?>>
