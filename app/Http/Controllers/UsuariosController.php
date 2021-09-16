@@ -81,13 +81,14 @@ class UsuariosController extends Controller
                 [
                     'NOMBRE'        => $request->nombre,
                     'PASS'          => $request->pass,
+                    'PERMISOS'      => 1,
                     'DSN'           => $request->dsn,
                     'DESCRIPCION'   => $request->descripcion,
                     'COD_CLIENT'    => $request->codClient,
                     'NRO_SUCURS'    => $request->nroSucurs,
                     'COD_VENDED'    => $request->codVended,
                     'TANGO'         => $request->tango,
-                    'TIPO'          => $request->tipo
+                    'TIPO'          => $request->tipo,
                 ]
             );
 
